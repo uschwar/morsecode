@@ -7,7 +7,6 @@ public class MorseCode {
   private final HashMap<Character, char[]> codes = new HashMap<Character, char[]>();
 
   public MorseCode() {
-    codes.put('a', ".-".toCharArray());
     codes.put('A', ".-".toCharArray());
     codes.put('B', "-...".toCharArray());
     codes.put('C', "-.-.".toCharArray());
