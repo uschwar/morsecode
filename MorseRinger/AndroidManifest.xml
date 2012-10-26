@@ -17,10 +17,10 @@
 
     <application
         android:icon="@drawable/icon"
-        android:label="@string/app_name" >
+        android:label="Morse Ringer" >
         <activity
             android:name=".HelloAndroid"
-            android:label="@string/app_name" >
+            android:label="Morse Ringer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
