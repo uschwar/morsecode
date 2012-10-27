@@ -59,17 +59,31 @@ public class AndroidAudioDevice {
 
   public void stop() {
     Log.d(LOG_ID, "stop()");
-    track.stop();
+    tryToStopTrack(track);
     active = false;
   }
 
-  public void release() {
+  private void tryToStopTrack(AudioTrack track2) {
+	  if (null != track && track.getState() != AudioTrack.STATE_UNINITIALIZED) {
+		track.stop();
+	}
+	
+}
+
+public void release() {
     Log.d(LOG_ID, "release()");
+    tryToRelease(track);
     active = false;
-    track.release();
   }
 
-  public Boolean isActive() {
+  private void tryToRelease(AudioTrack track2) {
+	  if (null != track && track.getState() != AudioTrack.STATE_UNINITIALIZED) {
+		track.release();
+	}
+	  track.release();
+  }
+
+public Boolean isActive() {
     return active;
   }
 }

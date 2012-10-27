@@ -71,7 +71,7 @@ public class MorseSoundGenerator {
 
   private void writeCharacterToAudioBuffer(char c) {
     Log.d(LOG_ID, "writeCharacterToAudioBuffer");
-    ds = code.getMorseCode(c);
+    ds = code.getMorseCode(c).toCharArray();
     if (null == ds && audioDevice.isActive()) {
       audioDevice.writeSamples(getWordPauseBuffer());
       return;

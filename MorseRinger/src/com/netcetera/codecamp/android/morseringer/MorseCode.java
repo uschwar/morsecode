@@ -4,75 +4,75 @@ import java.util.HashMap;
 
 public class MorseCode {
 
-  private final HashMap<Character, char[]> codes = new HashMap<Character, char[]>();
+  private final HashMap<Character, String> codes = new HashMap<Character, String>();
 
   public MorseCode() {
-    codes.put('A', ".-".toCharArray());
-    codes.put('B', "-...".toCharArray());
-    codes.put('C', "-.-.".toCharArray());
-    codes.put('D', "-..".toCharArray());
-    codes.put('E', ".".toCharArray());
-    codes.put('F', "..-.".toCharArray());
-    codes.put('G', "--.".toCharArray());
-    codes.put('H', "....".toCharArray());
-    codes.put('I', "..".toCharArray());
-    codes.put('J', ".---".toCharArray());
-    codes.put('K', "-.-".toCharArray());
-    codes.put('L', ".-..".toCharArray());
-    codes.put('M', "--".toCharArray());
-    codes.put('N', "-.".toCharArray());
-    codes.put('O', "---".toCharArray());
-    codes.put('P', ".--.".toCharArray());
-    codes.put('Q', "--.-".toCharArray());
-    codes.put('R', ".-.".toCharArray());
-    codes.put('S', "...".toCharArray());
-    codes.put('T', "-".toCharArray());
-    codes.put('U', "..-".toCharArray());
-    codes.put('V', "...-".toCharArray());
-    codes.put('W', ".--".toCharArray());
-    codes.put('X', "-..-".toCharArray());
-    codes.put('Y', "-.--".toCharArray());
-    codes.put('Z', "--..".toCharArray());
-    codes.put('0', "-----".toCharArray());
-    codes.put('1', ".----".toCharArray());
-    codes.put('2', "..---".toCharArray());
-    codes.put('3', "...--".toCharArray());
-    codes.put('4', "....-".toCharArray());
-    codes.put('5', ".....".toCharArray());
-    codes.put('6', "-....".toCharArray());
-    codes.put('7', "--...".toCharArray());
-    codes.put('8', "---..".toCharArray());
-    codes.put('9', "----.".toCharArray());
-    codes.put('À', ".--.-".toCharArray());
-    codes.put('Å', ".--.-".toCharArray());
-    codes.put('Ä', ".-.-".toCharArray());
-    codes.put('È', ".-..-".toCharArray());
-    codes.put('É', "..-..".toCharArray());
-    codes.put('Ö', "---.".toCharArray());
-    codes.put('Ü', "..--".toCharArray());
-    codes.put('ß', "...--..".toCharArray());
-    codes.put('Ñ', "--.--".toCharArray());
-    codes.put('.', ".-.-.-".toCharArray());
-    codes.put(',', "--..--".toCharArray());
-    codes.put(':', "---...".toCharArray());
-    codes.put(';', "-.-.-.".toCharArray());
-    codes.put('?', "..--..".toCharArray());
-    codes.put('-', "-....-".toCharArray());
-    codes.put('_', "..--.-".toCharArray());
-    codes.put('(', "-.--.".toCharArray());
-    codes.put(')', "-.--.-".toCharArray());
-    codes.put('=', "-...-".toCharArray());
-    codes.put('+', ".-.-.".toCharArray());
-    codes.put('/', "-..-.".toCharArray());
-    codes.put('@', ".--.-.".toCharArray());
-    codes.put(' ', " ".toCharArray());
+    codes.put('A', ".-");
+    codes.put('B', "-...");
+    codes.put('C', "-.-.");
+    codes.put('D', "-..");
+    codes.put('E', ".");
+    codes.put('F', "..-.");
+    codes.put('G', "--.");
+    codes.put('H', "....");
+    codes.put('I', "..");
+    codes.put('J', ".---");
+    codes.put('K', "-.-");
+    codes.put('L', ".-..");
+    codes.put('M', "--");
+    codes.put('N', "-.");
+    codes.put('O', "---");
+    codes.put('P', ".--.");
+    codes.put('Q', "--.-");
+    codes.put('R', ".-.");
+    codes.put('S', "...");
+    codes.put('T', "-");
+    codes.put('U', "..-");
+    codes.put('V', "...-");
+    codes.put('W', ".--");
+    codes.put('X', "-..-");
+    codes.put('Y', "-.--");
+    codes.put('Z', "--..");
+    codes.put('0', "-----");
+    codes.put('1', ".----");
+    codes.put('2', "..---");
+    codes.put('3', "...--");
+    codes.put('4', "....-");
+    codes.put('5', ".....");
+    codes.put('6', "-....");
+    codes.put('7', "--...");
+    codes.put('8', "---..");
+    codes.put('9', "----.");
+    codes.put('À', ".--.-");
+    codes.put('Å', ".--.-");
+    codes.put('Ä', ".-.-");
+    codes.put('È', ".-..-");
+    codes.put('É', "..-..");
+    codes.put('Ö', "---.");
+    codes.put('Ü', "..--");
+    codes.put('ß', "...--..");
+    codes.put('Ñ', "--.--");
+    codes.put('.', ".-.-.-");
+    codes.put(',', "--..--");
+    codes.put(':', "---...");
+    codes.put(';', "-.-.-.");
+    codes.put('?', "..--..");
+    codes.put('-', "-....-");
+    codes.put('_', "..--.-");
+    codes.put('(', "-.--.");
+    codes.put(')', "-.--.-");
+    codes.put('=', "-...-");
+    codes.put('+', ".-.-.");
+    codes.put('/', "-..-.");
+    codes.put('@', ".--.-.");
+    codes.put(' ', " ");
   }
 
-  public char[] getMorseCode(char key) {
+  public String getMorseCode(char key) {
     return codes.get(key);
   }
   
-  public HashMap<Character, char[]> getCodes(){
+  public HashMap<Character, String> getCodes(){
     return codes;
   }
 
