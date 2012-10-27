@@ -10,8 +10,6 @@
 package com.netcetera.codecamp.android.morseringer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -33,12 +31,7 @@ public class ListViewActivity extends ListActivity {
     super.onCreate(icicle);
     setContentView(R.layout.list_view);
     
-    MorseCode morseCode = new MorseCode();
-    morseCode.getCodes();
-    
-    
-    
-    for (Entry<Character, String> letter : morseCode.getCodes().entrySet()) {
+    for (Entry<Character, String> letter : MorseCode.getCodes().entrySet()) {
       itemsDisplay.add(letter.getKey() + " " + letter.getValue());
       itemsRead.add(letter.getKey().toString());
     }
