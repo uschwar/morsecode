@@ -19,7 +19,6 @@ public class MorseSoundGenerator {
   private int WORDPAUSELENGTH = DITLENGTH * 4;
   private int samplesPerMillisecond;
   private AndroidAudioDevice audioDevice;
-  private MorseCode code = new MorseCode();
   private char[] ds;
   private double frequency;
   private Thread morserThread;
@@ -71,7 +70,7 @@ public class MorseSoundGenerator {
 
   private void writeCharacterToAudioBuffer(char c) {
     Log.d(LOG_ID, "writeCharacterToAudioBuffer");
-    ds = code.getMorseCode(c).toCharArray();
+    ds = MorseCode.getMorseCode(c).toCharArray();
     if (null == ds && audioDevice.isActive()) {
       audioDevice.writeSamples(getWordPauseBuffer());
       return;
