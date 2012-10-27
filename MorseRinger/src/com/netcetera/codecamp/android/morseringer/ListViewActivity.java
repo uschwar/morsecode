@@ -9,7 +9,11 @@
  */
 package com.netcetera.codecamp.android.morseringer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map.Entry;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -20,25 +24,37 @@ import android.widget.TextView;
 
 public class ListViewActivity extends ListActivity {
   private TextView selection;
-  private static final String[] items={"A", "B", "C"};
+  private  List<String> itemsDisplay = new ArrayList<String>();
+  private  List<String> itemsRead = new ArrayList<String>();
   private static final int SAMPLINGRATE = 44100;
   
   @Override
   public void onCreate(Bundle icicle) {
     super.onCreate(icicle);
     setContentView(R.layout.list_view);
+    
+    MorseCode morseCode = new MorseCode();
+    morseCode.getCodes();
+    
+    
+    
+    for (Entry<Character, String> letter : morseCode.getCodes().entrySet()) {
+      itemsDisplay.add(letter.getKey() + " " + letter.getValue());
+      itemsRead.add(letter.getKey().toString());
+    }
+    
     setListAdapter(new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1,
-                        items));
+        android.R.layout.simple_list_item_1,
+        itemsDisplay));
     selection=(TextView)findViewById(R.id.selection);
   }
   
   @Override
   public void onListItemClick(ListView parent, View v, int position,
                                 long id) {
-    selection.setText(items[position]);
+    selection.setText(itemsDisplay.get(position));
     MorseSoundGenerator morseSoundGenerator = new MorseSoundGenerator(SAMPLINGRATE, 800.0, 50);
-    morseSoundGenerator.morse(items[position]);
+    morseSoundGenerator.morse(itemsRead.get(position));
   }
 }
 
