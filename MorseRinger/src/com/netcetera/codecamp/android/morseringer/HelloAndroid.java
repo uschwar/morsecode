@@ -1,30 +1,21 @@
 package com.netcetera.codecamp.android.morseringer;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.Window;
-import android.view.GestureDetector.OnGestureListener;
-import android.view.View;
-import android.view.View.OnClickListener;
-
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.CheckBox;
 
 public class HelloAndroid extends Activity implements OnGestureListener {
 
   // private static final int SAMPLINGRATE = 44100;
   // private AudioTrack at;
   // private TextView tv;
-  private MorseSoundGenerator morseSoundGenerator;
-  private Thread playThread;
   protected Bundle savedInstanceState;
   private Context context;
 
