@@ -1,6 +1,6 @@
 <resources>
 
-	<string name="app_name">Title Bar Progress</string>
+	<string name="app_name">Morse Ringer</string>
 	<string name="morseRingerOn">Enable morseRinger</string>
 	<string name="morseRingerOnText">Enables morsed caller ID as ringtone</string>
 	<string name="showMorseCode">Show the morse code alphabet</string>
