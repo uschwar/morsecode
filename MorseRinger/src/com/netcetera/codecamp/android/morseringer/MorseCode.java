@@ -71,5 +71,9 @@ public class MorseCode {
   public char[] getMorseCode(char key) {
     return codes.get(key);
   }
+  
+  public HashMap<Character, char[]> getCodes(){
+    return codes;
+  }
 
 }
