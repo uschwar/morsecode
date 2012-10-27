@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 public class MorseCode {
 
-	private static final HashMap<Character, String> codes = new HashMap<Character, String>();
+	private static HashMap<Character, String> codes = null;
 
-	{
+	private static void initCodes(){
 		codes.put('A', ".-");
 		codes.put('B', "-...");
 		codes.put('C', "-.-.");
@@ -72,10 +72,14 @@ public class MorseCode {
 	}
 	
 	public static String getMorseCode(char key) {
-		return codes.get(key);
+		return getCodes().get(key);
 	}
 
 	public static HashMap<Character, String> getCodes() {
+		if (null == codes) {
+			codes = new HashMap<Character, String>();
+			initCodes();
+		}
 		return codes;
 	}
 	
