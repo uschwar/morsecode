@@ -78,5 +78,5 @@ public class MorseCode {
 	public static HashMap<Character, String> getCodes() {
 		return codes;
 	}
-
+	
 }
