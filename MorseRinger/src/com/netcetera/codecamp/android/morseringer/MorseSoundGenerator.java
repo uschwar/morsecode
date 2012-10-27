@@ -150,15 +150,17 @@ public class MorseSoundGenerator {
   public void morse(final String string) {
     Log.d(LOG_ID, "morse - preparing Morsestuff");
     audioDevice = new AndroidAudioDevice(samprate);
-    final char[] charArray = string.toUpperCase().toCharArray();
+    final char[] charArray = (string + "  ").toUpperCase().toCharArray();
     morserThread = new Thread() {
 
       @Override
       public void run() {
         super.run();
-        for (int i = 0; i < charArray.length && audioDevice.isActive(); i++) {
-          writeCharacterToAudioBuffer(charArray[i]);
-        }
+        while (audioDevice.isActive()) {
+            for (int i = 0; i < charArray.length && audioDevice.isActive(); i++) {
+                writeCharacterToAudioBuffer(charArray[i]);
+              }
+		}
       }
 
     };
