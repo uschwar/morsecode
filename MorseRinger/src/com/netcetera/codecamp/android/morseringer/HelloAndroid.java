@@ -9,9 +9,14 @@ import android.view.GestureDetector.OnGestureListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.app.ListActivity;
+import android.content.Context;
+import android.content.Intent;
 
 public class HelloAndroid extends Activity implements OnGestureListener {
 
@@ -21,17 +26,17 @@ public class HelloAndroid extends Activity implements OnGestureListener {
   private MorseSoundGenerator morseSoundGenerator;
   private Thread playThread;
   protected Bundle savedInstanceState;
+  private Context context;
 
   /** Called when the activity is first created. */
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    this.savedInstanceState = savedInstanceState;
-    // morseSoundGenerator = new MorseSoundGenerator(SAMPLINGRATE, 800.0, 50);
+    context = this;
     // tv = new TextView(this);
     // setContentView(tv);
     // tv.setTextColor(Color.WHITE);
-
+    this.savedInstanceState = savedInstanceState;
     setContentView(R.layout.activity_main);
 
     addListenerOnCheckBoxEnable();
@@ -43,8 +48,9 @@ public class HelloAndroid extends Activity implements OnGestureListener {
   private void addListenerOnClickShowMorseCode() {
     Button showMorseCode = (Button) findViewById(R.id.buttonShowMorseCode);
     showMorseCode.setOnClickListener(new OnClickListener() {
+
       public void onClick(View v) {
-        
+        startActivity(new Intent(context,ListViewActivity.class)); 
       }
     });
   }
@@ -53,6 +59,7 @@ public class HelloAndroid extends Activity implements OnGestureListener {
   private void addListenerOnCheckBoxEnable() {
     CheckBox checkBoxEnable = (CheckBox) findViewById(R.id.checkBoxEnable);
     checkBoxEnable.setOnClickListener(new OnClickListener() {
+
       public void onClick(View v) {
         final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBoxEnable);
         if (!checkBox.isChecked()) {
@@ -147,4 +154,5 @@ public class HelloAndroid extends Activity implements OnGestureListener {
     return false;
   }
 
-}// activity 
+
+}// activity

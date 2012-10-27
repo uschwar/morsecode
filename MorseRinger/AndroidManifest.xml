@@ -20,12 +20,18 @@
         android:label="Morse Ringer" >
         <activity
             android:name=".HelloAndroid"
-            android:label="Morse Ringer" >
+            android:label="Morse Ringer"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListViewActivity"
+            android:label="Morse alphabet"
+            android:launchMode="singleInstance" >
         </activity>
 
         <receiver android:name=".PhoneStateBroadcastReceiver" >
