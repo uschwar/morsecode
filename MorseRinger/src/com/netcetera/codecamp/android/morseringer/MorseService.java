@@ -75,7 +75,7 @@ public class MorseService extends IntentService {
       CallerIDResult result = contactsHelper .getContact(phoneNumber, this.getContentResolver());
       Log.d(LOG_ID, "Lookup result is " + result.getName());
        if (!"".equals(result.getName())) {
-        getMorser().morse(result.getName());
+        getMorser().morseForever(result.getName());
       }
     } else {//QUIET! NOW!
       stopMorser();

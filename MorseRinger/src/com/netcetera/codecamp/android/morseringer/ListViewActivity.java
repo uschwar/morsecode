@@ -51,7 +51,7 @@ public class ListViewActivity extends ListActivity {
                                 long id) {
     selection.setText(itemsDisplay.get(position));
     MorseSoundGenerator morseSoundGenerator = new MorseSoundGenerator(SAMPLINGRATE, 800.0, 50);
-    morseSoundGenerator.morse(itemsRead.get(position));
+    morseSoundGenerator.morseOnce(itemsRead.get(position));
   }
 }
 
