@@ -19,7 +19,7 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <activity
-            android:name=".HelloAndroid"
+            android:name=".MainScreen"
             android:label="@string/app_name"
             android:launchMode="singleTask" >
             <intent-filter>
