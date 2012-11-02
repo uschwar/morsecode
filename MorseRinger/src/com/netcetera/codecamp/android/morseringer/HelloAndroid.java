@@ -37,7 +37,7 @@ public class HelloAndroid extends Activity implements OnGestureListener {
 
 
   private void addListenerOnClickShowMorseCode() {
-    Button showMorseCode = (Button) findViewById(R.id.buttonShowMorseCode);
+    Button showMorseCode = (Button) findViewById(R.id.button_show_morsecode);
     showMorseCode.setOnClickListener(new OnClickListener() {
 
       public void onClick(View v) {
@@ -48,11 +48,11 @@ public class HelloAndroid extends Activity implements OnGestureListener {
 
 
   private void addListenerOnCheckBoxEnable() {
-    CheckBox checkBoxEnable = (CheckBox) findViewById(R.id.checkBoxEnable);
+    CheckBox checkBoxEnable = (CheckBox) findViewById(R.id.checkbox_enable);
     checkBoxEnable.setOnClickListener(new OnClickListener() {
 
       public void onClick(View v) {
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBoxEnable);
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_enable);
         if (!checkBox.isChecked()) {
           checkBox.setChecked(true);
         }

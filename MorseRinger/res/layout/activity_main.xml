@@ -7,7 +7,7 @@
     tools:context=".HelloAndroid" >
 
     <CheckBox
-        android:id="@+id/checkBoxEnable"
+        android:id="@+id/checkbox_enable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -17,7 +17,7 @@
         android:text="@string/morseRingerOn" />
 
     <Button
-        android:id="@+id/buttonShowMorseCode"
+        android:id="@+id/button_show_morsecode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
