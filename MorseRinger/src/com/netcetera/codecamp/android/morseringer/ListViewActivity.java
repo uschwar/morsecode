@@ -20,6 +20,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import at.schwar.android.morse.service.MorseCode;
+import at.schwar.android.morse.service.MorseSoundGenerator;
 
 public class ListViewActivity extends ListActivity {
   private TextView selection;

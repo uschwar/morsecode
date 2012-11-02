@@ -1,4 +1,4 @@
-package com.netcetera.codecamp.android.morseringer.ext;
+package at.schwar.android.morse.service.ext;
 
 import android.content.ContentResolver;
 import android.content.Intent;

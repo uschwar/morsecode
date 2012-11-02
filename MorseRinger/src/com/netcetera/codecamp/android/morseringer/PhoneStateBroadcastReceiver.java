@@ -12,6 +12,7 @@ package com.netcetera.codecamp.android.morseringer;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import at.schwar.android.morse.service.MorseService;
 
 
 public class PhoneStateBroadcastReceiver extends BroadcastReceiver {

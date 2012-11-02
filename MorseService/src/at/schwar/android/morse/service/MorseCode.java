@@ -1,4 +1,4 @@
-package com.netcetera.codecamp.android.morseringer;
+package at.schwar.android.morse.service;
 
 import java.util.HashMap;
 
@@ -43,15 +43,15 @@ public class MorseCode {
 		codes.put('7', "--...");
 		codes.put('8', "---..");
 		codes.put('9', "----.");
-		codes.put('À', ".--.-");
-		codes.put('Å', ".--.-");
-		codes.put('Ä', ".-.-");
-		codes.put('È', ".-..-");
-		codes.put('É', "..-..");
-		codes.put('Ö', "---.");
-		codes.put('Ü', "..--");
-		codes.put('ß', "...--..");
-		codes.put('Ñ', "--.--");
+		codes.put('ï¿½', ".--.-");
+		codes.put('ï¿½', ".--.-");
+		codes.put('ï¿½', ".-.-");
+		codes.put('ï¿½', ".-..-");
+		codes.put('ï¿½', "..-..");
+		codes.put('ï¿½', "---.");
+		codes.put('ï¿½', "..--");
+		codes.put('ï¿½', "...--..");
+		codes.put('ï¿½', "--.--");
 		codes.put('.', ".-.-.-");
 		codes.put(',', "--..--");
 		codes.put(':', "---...");

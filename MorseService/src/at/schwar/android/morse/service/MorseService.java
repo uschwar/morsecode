@@ -1,14 +1,14 @@
-package com.netcetera.codecamp.android.morseringer;
+package at.schwar.android.morse.service;
 
-import com.netcetera.codecamp.android.morseringer.ext.CallerIDResult;
-import com.netcetera.codecamp.android.morseringer.ext.ContactsHelper;
-import com.netcetera.codecamp.android.morseringer.ext.NewContactsHelper;
 
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.IBinder;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import at.schwar.android.morse.service.ext.CallerIDResult;
+import at.schwar.android.morse.service.ext.ContactsHelper;
+import at.schwar.android.morse.service.ext.NewContactsHelper;
 
 public class MorseService extends IntentService {
 

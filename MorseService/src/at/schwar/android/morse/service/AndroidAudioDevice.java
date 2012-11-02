@@ -1,4 +1,4 @@
-package com.netcetera.codecamp.android.morseringer;
+package at.schwar.android.morse.service;
 
 import android.media.AudioFormat;
 import android.media.AudioManager;
