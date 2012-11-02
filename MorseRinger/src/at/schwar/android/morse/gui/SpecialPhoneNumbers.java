@@ -1,4 +1,4 @@
-package com.netcetera.codecamp.android.morseringer;
+package at.schwar.android.morse.gui;
 
 public interface SpecialPhoneNumbers {
 	public static final String UNKNOWN_NUMBER = "-1";

@@ -1,4 +1,5 @@
-package com.netcetera.codecamp.android.morseringer;
+package at.schwar.android.morse.gui;
+
 
 import android.app.Activity;
 import android.content.Context;
