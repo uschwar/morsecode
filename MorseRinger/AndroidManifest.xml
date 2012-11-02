@@ -41,7 +41,7 @@
         </receiver>
 
         <service
-            android:name="MorseService"
+            android:name=".MorseService"
             android:exported="false" />
     </application>
 

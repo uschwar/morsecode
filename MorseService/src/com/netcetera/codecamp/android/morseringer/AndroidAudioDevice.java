@@ -14,10 +14,10 @@ public class AndroidAudioDevice {
   private Boolean active = false;
 
   public AndroidAudioDevice(int samplingrate) {
-    int minSize = AudioTrack.getMinBufferSize(samplingrate, AudioFormat.CHANNEL_CONFIGURATION_MONO,
+    int minSize = AudioTrack.getMinBufferSize(samplingrate, AudioFormat.CHANNEL_OUT_MONO,
         AudioFormat.ENCODING_PCM_16BIT);
     track = new AudioTrack(AudioManager.STREAM_RING, samplingrate,
-        AudioFormat.CHANNEL_CONFIGURATION_MONO, AudioFormat.ENCODING_PCM_16BIT, minSize,
+        AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT, minSize,
         AudioTrack.MODE_STREAM);
     track.play();
     this.active = true;
