@@ -51,7 +51,6 @@ public class AndroidAudioDevice {
   }
 
   public void stop() {
-    Log.d(LOG_ID, "stop()");
     tryToStopTrack(track);
     active = false;
   }
@@ -64,7 +63,6 @@ public class AndroidAudioDevice {
 }
 
 public void release() {
-    Log.d(LOG_ID, "release()");
     tryToRelease(track);
     active = false;
   }

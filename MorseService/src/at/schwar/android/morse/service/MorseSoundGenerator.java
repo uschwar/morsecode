@@ -23,7 +23,6 @@ public class MorseSoundGenerator {
 	private Thread morserThread;
 
 	public MorseSoundGenerator(int samplingRate, double frequency, int ditLength) {
-		Log.d(LOG_ID, "MorseSoundGenerator");
 		this.samprate = samplingRate;
 		this.frequency = frequency;
 		this.samplesPerMillisecond = samprate / 1000;
@@ -47,7 +46,6 @@ public class MorseSoundGenerator {
 	}
 
 	private void deGlitchBuffer(short[] buffer) {
-		Log.d(LOG_ID, "deGlitchBuffer");
 		int fadeLengthMs = 2;// MUST be > 0 (Div / 0)
 		int fadeLengthSamples = fadeLengthMs * samplesPerMillisecond;
 		if (buffer.length > fadeLengthSamples * 3) {
@@ -68,7 +66,6 @@ public class MorseSoundGenerator {
 	}
 
 	private void writeCharacterToAudioBuffer(char c) {
-		Log.d(LOG_ID, "writeCharacterToAudioBuffer");
 		ds = MorseCode.getMorseCode(c).toCharArray();
 		if (null == ds && audioDevice.isActive()) {
 			audioDevice.writeSamples(getWordPauseBuffer());
@@ -91,12 +88,10 @@ public class MorseSoundGenerator {
 	}
 
 	private int getBufferSize(int length) {
-		Log.d(LOG_ID, "getBufferSize");
 		return samplesPerMillisecond * length;
 	}
 
 	void fillBuffer(short[] buffer, boolean pause) {
-		Log.d(LOG_ID, "fillBuffer");
 		double omega, t;
 		double dt = 1.0 / samprate; // sec per samp
 
@@ -115,39 +110,32 @@ public class MorseSoundGenerator {
 	}
 
 	public short[] getBuffer(int lengthMs, boolean mute) {
-		Log.d(LOG_ID, "getBuffer");
 		short[] buffer = new short[samplesPerMillisecond * lengthMs];
 		fillBuffer(buffer, mute);
 		return buffer;
 	}
 
 	public short[] getDitBuffer() {
-		Log.d(LOG_ID, "getDitBuffer");
 		return ditBuffer;
 	}
 
 	public short[] getDahBuffer() {
-		Log.d(LOG_ID, "getDahBuffer");
 		return dahBuffer;
 	}
 
 	public short[] getDitPauseBuffer() {
-		Log.d(LOG_ID, "getDitPauseBuffer");
 		return ditPauseBuffer;
 	}
 
 	public short[] getCharPauseBuffer() {
-		Log.d(LOG_ID, "getCharPauseBuffer");
 		return charPauseBuffer;
 	}
 
 	public short[] getWordPauseBuffer() {
-		Log.d(LOG_ID, "getWordPauseBuffer");
 		return wordPauseBuffer;
 	}
 
 	public void morseForever(final String string) {
-		Log.d(LOG_ID, "morse - preparing Morsestuff");
 		audioDevice = new AndroidAudioDevice(samprate);
 		final char[] charArray = (string + "  ").toUpperCase().toCharArray();
 		morserThread = new Thread() {
@@ -164,13 +152,10 @@ public class MorseSoundGenerator {
 			}
 
 		};
-		Log.d(LOG_ID, "morse - about to kick off Morser thread");
 		morserThread.start();
-		Log.d(LOG_ID, "morse started - returning.");
 	}
 
 	public void morseOnce(final String string) {
-		Log.d(LOG_ID, "morse - preparing Morsestuff");
 		audioDevice = new AndroidAudioDevice(samprate);
 		final char[] charArray = (string + "  ").toUpperCase().toCharArray();
 		morserThread = new Thread() {
@@ -184,18 +169,14 @@ public class MorseSoundGenerator {
 			}
 
 		};
-		Log.d(LOG_ID, "morse - about to kick off Morser thread");
 		morserThread.start();
-		Log.d(LOG_ID, "morse started - returning.");
 	}
 
 	public void stop() {
-		Log.d(LOG_ID, "stop");
 		audioDevice.stop();
 	}
 
 	public void release() {
-		Log.d(LOG_ID, "release");
 		audioDevice.release();
 	}
 
