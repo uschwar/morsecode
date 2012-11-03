@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class AndroidAudioDevice {
 
-  private static final String LOG_ID = "com.netcetera.codecamp.android.morseringer.AndroidAudioDevice";
+  private static final String LOG_ID = AndroidAudioDevice.class.getCanonicalName();
   private AudioTrack track;
   short[] buffer = new short[1024];
   private int samplesWritten;
@@ -24,9 +24,6 @@ public class AndroidAudioDevice {
   }
 
   public Boolean writeSamples(float[] samples) {
-    Log.d(LOG_ID, "writeSamples");
-    Log.d(LOG_ID, "TRACK STATE: " + track.getState());
-    Log.d(LOG_ID, "TRACK STATE: " + track.getPlayState());
     if (active) {
       fillBuffer(samples);
       track.write(buffer, 0, samples.length);
@@ -35,9 +32,6 @@ public class AndroidAudioDevice {
   }
 
   public Boolean writeSamples(short[] samples) {
-    Log.d(LOG_ID, "writeSamples");
-    Log.d(LOG_ID, "TRACK STATE: " + track.getState());
-    Log.d(LOG_ID, "TRACK STATE: " + track.getPlayState());
     if (active) {
       samplesWritten = 0;
       while (samplesWritten < samples.length) {
@@ -49,7 +43,6 @@ public class AndroidAudioDevice {
   }
 
   private void fillBuffer(float[] samples) {
-    Log.d(LOG_ID, "fillBuffer");
     if (buffer.length < samples.length)
       buffer = new short[samples.length];
 

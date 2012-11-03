@@ -4,7 +4,7 @@ import android.util.Log;
 
 public class MorseSoundGenerator {
 
-	private static final String LOG_ID = "com.netcetera.codecamp.android.morseringer.MorseSoundGenerator";
+	private static final String LOG_ID = MorseSoundGenerator.class.getCanonicalName();
 	private int samprate;
 	private short[] ditBuffer = null;
 	private short[] dahBuffer = null;
