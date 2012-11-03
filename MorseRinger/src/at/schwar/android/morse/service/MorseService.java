@@ -1,7 +1,9 @@
 package at.schwar.android.morse.service;
 
 import android.app.IntentService;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -19,6 +21,8 @@ public class MorseService extends IntentService {
 	private ContactsHelper contactsHelper = new NewContactsHelper();
 	private static final int SAMPLINGRATE = 44100;
 
+	private boolean serviceEnabled;
+
 	public MorseService() {
 		super("noname");
 		Log.d(LOG_ID, "MorseService()");
@@ -34,6 +38,9 @@ public class MorseService extends IntentService {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
+		SharedPreferences preferences = this.getApplicationContext().getSharedPreferences(
+				this.getClass().getCanonicalName(), Context.MODE_PRIVATE);
+		serviceEnabled = preferences.getBoolean(ENABLED_NAME, false);
 		Log.d(LOG_ID, "onCreate()");
 	}
 
@@ -48,7 +55,9 @@ public class MorseService extends IntentService {
 	public void onStart(Intent intent, int startId) {
 		// TODO Auto-generated method stub
 		super.onStart(intent, startId);
-		handleCommand(intent, startId);
+		if (serviceEnabled) {
+			handleCommand(intent, startId);
+		}
 		Log.d(LOG_ID, "onStart()");
 	}
 
