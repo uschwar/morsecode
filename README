@@ -1,3 +1,4 @@
 To get this running:
-- Install eclipse and android stuff e.g. http://sharepointkunskap.wordpress.com/2012/05/11/install-android-sdk-and-eclipse-in-ubuntu-12-04/
-- Import - Git - use github link - Import projects - done
+- Install eclipse (download current from eclipse.org), the android-sdk and the eclipse adt plugin. (You could follow this guide: http://sharepointkunskap.wordpress.com/2012/05/11/install-android-sdk-and-eclipse-in-ubuntu-12-04/ )
+In Eclipse:
+- Right-click in Package Explorer - Import... - Git/Import Projects from git - URI - use git@github.com:uschwar/morsecode.git - Next(a few times) - Finish
