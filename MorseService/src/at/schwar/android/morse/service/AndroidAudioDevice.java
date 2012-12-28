@@ -24,21 +24,29 @@ public class AndroidAudioDevice {
   }
 
   public Boolean writeSamples(float[] samples) {
-    if (active) {
-      fillBuffer(samples);
-      track.write(buffer, 0, samples.length);
-    }
+	  try {
+		  if (active) {
+			  fillBuffer(samples);
+			  track.write(buffer, 0, samples.length);
+		  }
+	} catch (IllegalStateException e) {
+		//Sometimes Android fails with this..
+	}
     return active;
   }
 
   public Boolean writeSamples(short[] samples) {
-    if (active) {
-      samplesWritten = 0;
-      while (samplesWritten < samples.length) {
-        samplesWritten += track.write(samples, samplesWritten,
-            Math.min(buffer.length, samples.length - samplesWritten));
-      }
-    }
+	  try {
+		  if (active) {
+			  samplesWritten = 0;
+			  while (samplesWritten < samples.length) {
+				  samplesWritten += track.write(samples, samplesWritten,
+						  Math.min(buffer.length, samples.length - samplesWritten));
+			  }
+		  }
+	} catch (IllegalStateException e) {
+		//Sometimes Android fails with this..
+	}
     return active;
   }
 
